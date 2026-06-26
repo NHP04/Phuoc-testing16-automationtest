@@ -102,7 +102,7 @@ public class Main {
 
 //        Scanner scan1 = new Scanner(System.in);
 //        System.out.println("Nhap so can tim: ");
-//        int target = scan.nextInt();
+//        int target = scan1.nextInt();
 //
 //        int location = -1;
 //
@@ -143,14 +143,16 @@ public class Main {
 //        bai 5: xoa nguyen am (u,e,o,a,i)
 //        input: Cybersoft
 //        output: Cbrsft
-        String str = "Cybersoft";
-        String result = "";
+//        String str = "Cybersoft";
+//        String result = "";
 //        String la tap hop cac ky tu (character), mang cac ky tu (char)
 //        String <=> char[]
-        for(int i = 0; i < str.length(); i++) {
+//        for(int i = 0; i < str.length(); i++) {
+
 //            chuyen cac ky tu ve viet thuong
-            char c = str.charAt(i); // lay ky tu thu i trong mang ky tu
-            char lowerC = Character.toLowerCase(c);
+
+//            char c = str.charAt(i); // lay ky tu thu i trong mang ky tu
+//            char lowerC = Character.toLowerCase(c);
 
 //            if(lowerC != 'u' && lowerC != 'e' && lowerC != 'o' && lowerC != 'a' && lowerC != 'i') {
 //                result += c;
@@ -164,17 +166,148 @@ public class Main {
 //            cach 3: indexOf cua String
 //            khong tim thay => -1
 //            tim thay => index
-            if ("ueoai".indexOf(Character.toString(lowerC)) == -1) {
-                result += c;
-            }
+//            if ("ueoai".indexOf(Character.toString(lowerC)) == -1) {
+//                result += c;
+//            }
 
 //            cach khac: viet theo kieu Collection trong java
+//        }
+//        System.out.println(result);
+
+
+
+
+
+//        BTVN
+//        Bài 3: Tính Tổng Các Số Chẵn
+//        Ví dụ:
+//        Input: 10
+//        Output: 30
+//        Input: 5
+//        Output: 6
+
+        int tongChan = 0;
+        System.out.println("Nhap so tinh tong chan: ");
+        int n3 = scan.nextInt();
+        for(int i = 1; i <= n3; i++){
+            if (i % 2 == 0 ){
+                tongChan += i;
+            }
         }
-        System.out.println(result);
-
-    }
+        System.out.println("tong cac so chan la: " + tongChan);
 
 
 
+//        Bài 4: Đếm số từ trong một chuỗi
+//        Input: "Xin chào các bạn"
+//        Output: 4
+//        Input: "Hello World"
+//        Output: 2
+
+
+        System.out.println("Nhap tu can dem: ");
+        scan.nextLine();
+        String n4 = scan.nextLine();
+        int count = 0;
+
+        for (int i = 0; i < n4.length(); i++){
+            char c = n4.charAt(i);
+
+            if (c != ' '){
+                if(i == 0 || n4.charAt(i - 1) == ' '){
+                    count++;
+                }
+            }
+        }
+        System.out.println("So tu la: " + count);
+
+
+//        Bài 5: In Chữ Cái Đầu Của Mỗi Từ
+//        Input: "Xin chào các bạn"
+//        Output: "X C C B"
+//        Input: "Hello World"
+//        Output: "H W"
+
+        String result5 = "";
+        for (int i = 0; i < n4.length(); i++) {
+            char c = n4.charAt(i);
+            char upperC = Character.toUpperCase(c);
+
+            if (c != ' '){
+                if(i == 0 || n4.charAt(i - 1) == ' '){
+                 result5 = result5 + upperC + " ";
+                }
+            }
+        }
+        System.out.println("ky tu dau tien la: " + result5);
+
+
+
+//        Cấp độ 2
+//        Bài 1: Viết một chương trình Java tính thuế thu nhập cá nhân
+//        1.Thu nhập từ 0 đến 5 triệu đồng: 5%
+//                2.Thu nhập từ 5 triệu đến 10 triệu đồng: 10%
+//                3.Thu nhập từ 10 triệu đến 18 triệu đồng: 15%
+//                4.Thu nhập từ 18 triệu đến 32 triệu đồng: 20%
+//                5.Thu nhập từ 32 triệu đến 52 triệu đồng: 25%
+//                6.Thu nhập từ 52 triệu đến 80 triệu đồng: 30%
+//                7.Thu nhập trên 80 triệu đồng: 35%
+
+        System.out.println("Nhap so thu nhap cua ban: ");
+        int TN = scan.nextInt();
+        double thue = 0;
+        if (TN >= 0 && TN <= 5000000) {
+            thue = TN * 0.05;
+        }
+        else if (TN <= 10000000) {
+            thue = TN * 0.10;
+        }
+        else if (TN <= 18000000) {
+            thue = TN * 0.15;
+        }
+        else if (TN <= 32000000) {
+            thue = TN * 0.20;
+        }
+        else if (TN <= 52000000) {
+            thue = TN * 0.25;
+        }
+        else if (TN <= 80000000) {
+            thue = TN * 0.30;
+        }
+        else {
+            thue = TN * 0.35;
+        }
+
+        System.out.println("Số thuế phải trả là: " + thue);
+
+
+
+//        Bài 2: Kiểm Tra Chuỗi Đối Xứng
+//        Input: "madam"
+//        Output: true
+//        Input: "hello"
+//        Output: false
+
+        scan.nextLine();
+        System.out.println("Nhap chuoi kiem tra doi xung:");
+        String sc6 = scan.nextLine();
+
+        String word2 = "";
+
+        for (int j = sc6.length() - 1; j >= 0 ; j--){
+            word2 += sc6.charAt(j);
+        }
+
+
+        if ( sc6.equals(word2)){
+            System.out.println("Đay la chuoi doi xung");
+        }
+        else{
+            System.out.println("Đay la khong phai chuoi doi xung");
+        }
+
+
+
+}
 
     }
