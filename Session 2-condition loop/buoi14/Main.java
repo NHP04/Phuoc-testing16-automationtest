@@ -101,9 +101,39 @@ public class Main {
 //        }
 
 
-        //Bai 1 vong lap
+        //Bai 2 vong lap
+
+//        bai1: in ra cac so tu 1 den 50
+
+        int n1 = 50;
+
+//        for(int i =1; i<= n1; i++){
+//            System.out.println(i);
+//        }
+
+//        bai 2: in ra cac so chan tu 1 den 50
+
+        for(int i =1; i<= n1; i++) {
+            if(i % 2 ==0) {
+            System.out.println(i);
+        }
+        }
+
+//        bai 3: tinh tong cac so tu 1->n
+        int tong = 0;
+        for(int i =1; i<= n1; i++){
+            tong += i;
+        }
+        System.out.println("Tong cac so la: " + tong);
 
 
+//        Bai 4: in ra bang cuu chuong
+
+        int num1 = 7;
+        System.out.println("Bang cuu chuong cua 7 la: ");
+        for (int i = 1; i <= 10; i++){
+            System.out.println(num1 + " x " + i + " = " + (num1 * i) );
+        }
 
         }
     }
